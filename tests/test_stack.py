@@ -34,6 +34,12 @@ class TestStack(unittest.TestCase):
         with self.assertRaises(AttributeError):
             stack.pop()
 
+    def test_stck_3(self):
+        stack = Stack()
+        self.assertEqual(str(stack), '')
+        stack.push(123)
+        self.assertEqual(str(stack), '123')
+
 
 if __name__ == '__main__':
     unittest.main()
