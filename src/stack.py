@@ -41,3 +41,8 @@ class Stack:
         top = self.top.data
         self.top = self.top.next_node
         return top
+
+    def __str__(self):
+        if self.top is None:
+            return ''
+        return f'{self.top.data}'
