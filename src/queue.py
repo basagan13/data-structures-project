@@ -38,10 +38,20 @@ class Queue:
     def dequeue(self):
         """
         Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
-
         :return: данные удаленного элемента
         """
-        pass
+        if self.head is None:
+            return None
+
+        # продвигает фронт к следующему узлу
+        temp = self.head
+        self.head = self.head.next_node
+
+        # уменьшает количество узлов на 1
+        self.count -= 1
+
+        # вернуть удаленный элемент
+        return temp.data
 
     def __str__(self):
         """Магический метод для строкового представления объекта"""
