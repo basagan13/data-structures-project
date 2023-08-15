@@ -22,6 +22,15 @@ class TestQueue(unittest.TestCase):
         with self.assertRaises(AttributeError):
             queue.tail.next_node.data
 
+    def test_queue_dequeue(self):
+        queue = Queue()
+        queue.enqueue('str')
+        queue.enqueue(['data', 2])
+        self.assertEqual(queue.dequeue(), 'str')
+        self.assertEqual(queue.dequeue(), ['data', 2])
+        self.assertEqual(queue.dequeue(), None)
+
+
 
 if __name__ == '__main__':
     unittest.main()
