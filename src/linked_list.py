@@ -52,3 +52,33 @@ class LinkedList:
 
         ll_string += ' None'
         return ll_string
+
+    def to_list(self):
+        ll_list = []
+
+        node = self.head
+        while node:
+            ll_list.append(node.data)
+            node = node.next_node
+
+        return ll_list
+
+    def get_data_by_id(self, id_to_find):
+        node = self.head
+        nl = {}
+        try:
+            while node:
+                if node.data['id'] == id_to_find:
+                    nl = node.data
+                node = node.next_node
+            return nl
+
+        except TypeError:
+            return 'Данные не являются словарем или в словаре нет id.'
+
+
+            # except TypeError:
+            # try:
+            #     if node.data['id'] == id_to_find:
+            #         return node.data
+
